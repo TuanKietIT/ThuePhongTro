@@ -15,7 +15,7 @@
                                 <!-- FORM Panel -->
                                 <div class="col-md-4">
                                 @foreach($edit_loaiphong as $key => $loaiphong)
-                                <form action="{{URL::to('/update-loaiphong/'.$loaiphong->loai_id)}}" method="post" id="manage-supplier">
+                                <form action="{{URL::to('/update-loaiphong/'.$loaiphong->loaiphong_id)}}" method="post" id="manage-supplier">
                                 {{csrf_field()}}  
                                     <div class="card">
                                         <div class="card-header">

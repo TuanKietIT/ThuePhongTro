@@ -36,7 +36,8 @@ class TinTucController extends Controller
     public function savetintuc(Request $request)
     {
     	$data = array();
-        $data['tentieude'] = $request->tentieude;
+        $data['tenbaiviet'] = $request->tenbaiviet;
+        $data['tieude'] = $request->tieude;
         $data['thoigian'] = $request->thoigian;
         $data['mota'] = $request->mota;
         $get_image= $request->file('image');
@@ -45,7 +46,7 @@ class TinTucController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_img = $name_image.rand(0,100).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./public/upload',$new_img);
+            $get_image->move('./public/upload/tintuc',$new_img);
         
             $data['image'] = $new_img;
             DB::table('tbl_tintuc')->insert($data);
@@ -67,9 +68,9 @@ class TinTucController extends Controller
     public function updatetintuc(Request $request,$id)
     {
     	$data = array();
-    	$data = array();
-        $data['tentieude'] = $request->tentieude;
-        $data['thoigian'] = "$request->thoigian";
+        $data['tenbaiviet'] = $request->tenbaiviet;
+        $data['tieude'] = $request->tieude;
+        $data['thoigian'] = $request->thoigian;
         $data['mota'] = $request->mota;
         $get_image= $request->file('image');
 
@@ -77,15 +78,13 @@ class TinTucController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_img = $name_image.rand(0,100).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./public/upload',$new_img);
+            $get_image->move('./public/upload/tintuc',$new_img);
             
-            $data['thoigian'] = '';
             $data['image'] = $new_img;
             DB::table('tbl_tintuc')->where('id',$id)->update($data);
             session::put('message_tintuc','Thêm thành viên thành công!!');
             return Redirect::to('list-tintuc');
         }
-        $data['thoigian'] = '';
     	$data['image'] = '';
         DB::table('tbl_tintuc')->where('id',$id)->update($data);
     	session::put('message1','Thêm thành viên thành công!!');

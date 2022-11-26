@@ -24,7 +24,7 @@ class LoaiThanhVienController extends Controller
     public function showloaithanhvien()
     {
         $this->AuthLoGin();
-    	$loai = DB::table('tbl_loaithanhvien')->get();
+    	$loai = DB::table('tbl_loaithanhvien')->paginate(8);
     	$menageloai = view('admin.loaithanhvien')->with('loai',$loai);
     	return view('admin_layout')->with('admin.loaithanhvien',$menageloai);
     }

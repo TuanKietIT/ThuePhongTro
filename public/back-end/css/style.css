@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
     list-style: none;
     user-select: none;
@@ -318,7 +318,7 @@ body{
 .main-body{
     margin-left: 30rem;
     width: calc(100vw-28rem);
-    height: 80vh;
+    height: 83vh;
     background-color: rgba(255, 255,255, .6);
     margin-right: 20px;
 
@@ -878,20 +878,45 @@ textarea{
     margin:22px 306px;
     outline: none;
 }
+.seclect-box select{
+    padding: 0.4rem 1rem;
+    height: 30px;
+    margin: 11px 2px;
+    outline: none;
+}
 .user-input-box .form-group{
     width: 95%;
+    position: relative;
 }
 .user-input-box .form-group #choose{
    border: none;
 }
 .btn-postup{
+    position: absolute;
     background-color: #53d769;
     padding: .6rem 2rem;
     margin:30px 10px ;
+    right: 250px;
+    top: 200px;
     text-decoration: none;
     color: #fff;
     border-radius: 3px;
     border: none;
+}
+.btn-postup-cancel{
+    position: absolute;
+    background-color: #53d769;
+    padding: .6rem 2rem;
+    margin:30px 10px ;
+    right: 150px;
+    top: 200px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+}
+.inputfield{
+    margin-bottom: 20px;
 }
 .btn-postup:hover{
     background: red;
@@ -912,7 +937,30 @@ textarea{
     .container{
         min-width: 280px;
     }
-
+    .btn-postup{
+        position: absolute;
+        background-color: #53d769;
+        padding: .6rem 2rem;
+        margin:30px 10px ;
+        right: 250px;
+        top: 100px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 3px;
+        border: none;
+    }
+    .btn-postup-cancel{
+        position: absolute;
+        background-color: #f0fa68;
+        padding: .6rem 2rem;
+        margin:30px 10px ;
+        right: 150px;
+        top: 100px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 3px;
+        border: none;
+    }
     .user-input-box{
         margin-bottom: 12px;
         width: 100%;
@@ -922,7 +970,9 @@ textarea{
         height: 30px;
         margin:10px 10px;
     }
-
+    .inputfield label{
+          display: none;
+    }
     .user-input-box:nth-child(2n){
         justify-content: space-between;
     }
@@ -1489,6 +1539,16 @@ input.checkbox:checked:after {
         margin: 3em 0em;
         font-size: 13px;
     }
+    .wrapper .form .inputfield .input,
+    .wrapper .form .inputfield .textarea{
+        width: 70%;
+        outline: none;
+        border: 1px solid #d5dbd9;
+        font-size: 15px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
 }
 @media screen and (max-width: 568px) {
     .main-w3layouts-agileinfo {
@@ -1603,12 +1663,15 @@ input.checkbox:checked:after {
     }
 }
 .wrapper{
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     background: #fff;
     margin: 20px auto;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
     padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .wrapper .form{
@@ -1616,6 +1679,7 @@ input.checkbox:checked:after {
   }
   
   .wrapper .form .inputfield{
+    width: 520px;
     margin-bottom: 5px;
     display: flex;
     align-items: center;
@@ -1640,7 +1704,7 @@ input.checkbox:checked:after {
   }
   
   .wrapper .form .inputfield .textarea{
-    width: 100%;
+    width: 50%;
     height: 125px;
     resize: none;
   }

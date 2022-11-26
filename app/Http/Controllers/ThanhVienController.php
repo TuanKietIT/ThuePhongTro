@@ -50,7 +50,7 @@ class ThanhVienController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_img = $name_image.rand(0,100).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./public/upload',$new_img);
+            $get_image->move('./public/upload/user',$new_img);
         
             $data['image'] = $new_img;
             DB::table('tbl_thanhvien')->insert($data);
@@ -77,7 +77,7 @@ class ThanhVienController extends Controller
         $data['tenthanhvien'] = $request->tenthanhvien;
         $data['dienthoai'] = $request->dienthoai;
         $data['email'] = $request->email;
-        $data['password'] = $request->password;
+        $data['password'] = md5($request->password);
         $data['diachi'] = $request->diachi;
         $data['content'] = $request->content;
         $get_image= $request->file('image');
@@ -86,7 +86,7 @@ class ThanhVienController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_img = $name_image.rand(0,100).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./public/upload',$new_img);
+            $get_image->move('./public/upload/user',$new_img);
         
             $data['image'] = $new_img;
             DB::table('tbl_thanhvien')->where('id',$id)->update($data);
@@ -98,6 +98,11 @@ class ThanhVienController extends Controller
     	session::put('message1','Thêm thành viên thành công!!');
         return Redirect::to('list-thanhvien');
 
+    }
+    public function deletethanhvien($id){
+        DB::table('tbl_thanhvien')->where('id',$id)->delete();
+    	session::put('delete','Xóa danh mục thành công!!');
+        return Redirect::to('list-thanhvien');
     }
 
 }

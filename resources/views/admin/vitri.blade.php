@@ -57,39 +57,47 @@
                                         </div>
                                         <div class="card-body">
                                             <table class="table table-bordered ">
-                                            <thead>
-                                            <tr>
-                                                <th style="width:50px" class="text-center">Stt</th>
-                                                <th class="text-center">Mô tả</th>
-                                                <th class="text-center">Chức năng</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                            @foreach($vitri as $key => $vitri)
-                                            <tr>
-                                                <td style= "color: #707070;"class="text-center">{{$vitri->vitri_id}}</td>
-                                                <td >
-                                                    <p>Name: <b>{{$vitri->tenvitri}}</b></p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a style="margin:10px" href="{{URL::to('/edit-vitri/'.$vitri->vitri_id)}}" class="btn-edit " id="button" >Edit</button>
-                                                    <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-vitri/'.$vitri->vitri_id)}}"  >
-                                                        Delete
-                                                    </a>
-                                               </tr>
-                                            @endforeach
-                                            
-                                        </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th style="width:50px" class="text-center">Stt</th>
+                                                        <th class="text-center">Mô tả</th>
+                                                        <th class="text-center">Chức năng</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    @foreach($vitri as $key => $vitris)
+                                                    <tr>
+                                                        <td style= "color: #707070;"class="text-center">{{$vitris->vitri_id}}</td>
+                                                        <td >
+                                                            <p>Name: <b>{{$vitris->tenvitri}}</b></p>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <a style="margin:10px" href="{{URL::to('/edit-vitri/'.$vitris->vitri_id)}}" class="btn-edit " id="button" >Edit</button>
+                                                            <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-vitri/'.$vitris->vitri_id)}}"  >
+                                                                Delete
+                                                            </a>
+                                                    </tr>
+                                                    @endforeach
+                                                    
+                                                </tbody>
                                             </table>
                                             <div class="container-pagination">
                                                 <div class="pagination">
-                                                    <a href="#">&laquo;</a>
-                                                    <a href="#"></a>
-                                                    <a href="#">2</a>
-                                                    <a href="#">&raquo;</a>
+                                                    <span>{{$vitri->links()}}</span>
                                                 </div>
-                                          </div>
+                                           </div>
+                                           <style>
+                                                 .pagination{
+                                                    height:30px;
+                                                    width: 100%;
+                                                    margin-top:-7px;
+                                                    padding:3px 10px;
+                                                 }
+                                                 .inline-flex,.text-gray-700{
+                                                    display:none;
+                                                 }
+                                           </style>
                                         </div>
                                     </div>
                                 </div>

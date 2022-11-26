@@ -23,7 +23,7 @@ class ViTriController extends Controller
     public function showvitri()
     {
         $this->AuthLoGin();
-    	$vitri = DB::table('tbl_vitri')->get();
+    	$vitri = DB::table('tbl_vitri')->paginate(8);
     	$menagevitri = view('admin.vitri')->with('vitri',$vitri);
     	return view('admin_layout')->with('admin.vitri',$menagevitri);
     }

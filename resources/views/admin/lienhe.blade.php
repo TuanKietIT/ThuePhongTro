@@ -17,9 +17,9 @@
                         <thead>
                           <tr>
                             <th scope="col" width="50px">ID</th>
-                            <th scope="col" width="80px">hình ảnh</th>
+                            <th scope="col" width="80px">Họ tên</th>
                             <th class="none" scope="col" width="100px">email</th>
-                            <th scope="col" width="80px">thời gian</th>
+                            <th scope="col" width="80px">điện thoại</th>
                             <th scope="col" width="250px">Nội dung</th>
                             <th scope="col" width="120px">Action</th>
                           </tr>
@@ -28,9 +28,9 @@
                           @foreach($lienhe as $key => $lienhe)
                           <tr>
                             <td  data-label="Account">{{$lienhe->id}}</td>
-                            <td data-label="Due Date"><img src="./public/upload/{{$lienhe->image}}" class="tab-img"></td>
+                            <td  data-label="Account">{{$lienhe->hoten}}</td>
                             <td class="none"data-label="Amount">{{$lienhe->email}}</td>
-                            <td class="none"data-label="Amount">{{$lienhe->thoigian}}</td>
+                            <td class="none"data-label="Amount">0{{$lienhe->dienthoai}}</td>
                             <td data-label="Period">{{$lienhe->noidung}}</td>
                             <td class="">
                                <a  href="{{URL::to('/edit-lienhe/'.$lienhe->id)}}" class="btn-edit" href="">Xem</a>

@@ -31,8 +31,8 @@
                           @foreach($tintuc as $key => $tintuc)
                           <tr>
                             <td  data-label="Account">{{$tintuc->id}}</td>
-                            <td data-label="Due Date"><img src="./public/upload/{{$tintuc->image}}" class="tab-img"></td>
-                            <td class="none"data-label="Amount">{{$tintuc->tentieude}}</td>
+                            <td data-label="Due Date"><img src="./public/upload/tintuc/{{$tintuc->image}}" class="tab-img"></td>
+                            <td class="none"data-label="Amount">{{$tintuc->tenbaiviet}}</td>
                             <td data-label="Period">{{$tintuc->thoigian}}</td>
                             <td class="none"data-label="Amount" style="position: relative;"><span class="pe"></span></td>
                             <td class="">

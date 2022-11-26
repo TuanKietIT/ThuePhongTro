@@ -33,9 +33,22 @@ class LienHeController extends Controller
         $menagelienhe = view('admin.editlienhe')->with('editlienhe',$editlienhe);
     	return view('admin_layout')->with('admin.editlienhe',$menagelienhe);
     }
-    public function updatelienhe(Request $request,$id)
+    public function savelienhe(Request $request)
     {
     	$data = array();
+        $data['hoten'] = $request->hoten;
+        $data['email'] = $request->email;
+        $data['dienthoai'] = $request->dienthoai;
+        $data['tieude'] = $request->tieude;
+        $data['noidung'] = $request->noidung;
+        
+        DB::table('tbl_lienhe')->insert($data);
+    	session::put('message1','Thêm thành viên thành công!!');
+        return Redirect::to('lien-he');
+
+    }
+    public function updatelienhe(Request $request,$id)
+    {
     	$data = array();
         $data['email'] = $request->email;
         $data['thoigian'] = $request->thoigian;
@@ -62,7 +75,7 @@ class LienHeController extends Controller
 
     }
     public function deletelienhe($id){
-        DB::table('tbl_lienhe')->where('id',id)->delete();
+        DB::table('tbl_lienhe')->where('id',$id)->delete();
     	session::put('delete','Xóa danh mục thành công!!');
         return Redirect::to('list-lienhe');
     }

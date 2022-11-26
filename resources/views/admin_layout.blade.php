@@ -16,7 +16,7 @@
         <div class="navbar">
             <div class="logo">
                 <img width="45px" src="{{asset('public/back-end/images/logo.png')}}" alt="">
-                <span class="logo-name">Three-Team</span>
+                <span class="logo-name">ATK</span>
             </div>
             <div class="search-box">
                 <form action="">
@@ -44,7 +44,14 @@
                     </ul>
                 </div>
                 <div class="account">   
-                    <span class="account-name">Phan Tuấn Kiệt</span>
+                    <span class="account-name">
+                        <?php
+                        $name = Session::get('admin_name');
+                        if($name){
+                            echo $name;
+                        }
+                        ?>
+                    </span>
                     <img width="30px" src="{{asset('public/back-end/images/n1.png')}}" alt="">
                 </div>
             </div>
@@ -71,7 +78,7 @@
                         </a>
                         <ul class="side-down">
                             <li>
-                                <a href="{{URL::to('/list-loaithanhvien')}}">
+                                <a href="{{URL::to('/timnhatro')}}">
                                     <i class="fa fa-solid fa-book"></i>
                                     Danh mục
                                 </a>
@@ -101,12 +108,6 @@
                                 <a href="{{URL::to('/list-vitri')}}">
                                     <i class="fa fa-solid fa-book"></i>
                                     Danh mục vị trí
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-solid fa-list"></i>
-                                    Đăng tin
                                 </a>
                             </li>
                             <li>

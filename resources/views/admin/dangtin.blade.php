@@ -8,10 +8,9 @@
                 </div>
                 <div class="searchbox">
                    <form action="" method="post">
-                       <select name="" id="">
-                            <option>ten người dùng</option>
-                            <option>Tên phòng </option>
-                       </select>
+                        <a href="{{URL::to('/add-dangtin')}}">
+                            Thêm mới
+                        </a>
                        <input type="text" name="">
                         <button class="btn-search">Tìm kiếm</button>
                    </form>
@@ -20,46 +19,78 @@
                     <table>
                         <thead>
                           <tr>
-                            <th scope="col" width="50px">ID</th>
-                            <th scope="col" width="80px">Name</th>
-                            <th class="none" scope="col" width="150px">Address</th>
-                            <th scope="col" width="80px">Date</th>
-                            <th class="none" scope="col" width="120px">Price</th>
+                            <th scope="col" width="20px">ID</th>
+                            <th scope="col" width="80px">Hinh ảnh</th>
+                            <th class="none" scope="col" width="110px">Tiêu đề</th>
+                            <th scope="col" width="90px">HoTen</th>
+                            <th scope="col" width="120px">Email</th>
+                            <th scope="col" width="80px">Ngày cập nhật</th>
+                            <th class="none" scope="col" width="40px">Price</th>
                             <th class="none" scope="col" width="90px">Status</th>
-                            <th scope="col" width="120px">Action</th>
+                            <th scope="col" width="90px">Action</th>
                           </tr>
                         </thead>
                         <tbody>
+                         @foreach($dangtins as $key => $dangtin)
                           <tr>
-                            <td  data-label="Account">#3412</td>
-                            <td data-label="Due Date"><img src="/images/n1.jpg" class="tab-img"></td>
-                            <td class="none"data-label="Amount">Lorem ispum dummy text industry.</td>
-                            <td data-label="Period">03/01/2022</td>
-                            <td class="none" data-label="Due Date">$64.00</td>
+                            <td  data-label="Account">{{$dangtin->id}}</td>
+                            <td data-label="Due Date"><img src="./public/upload/dangtin/{{$dangtin->image}}" class="tab-img"></td>
+                            <td class="none"data-label="Amount" > {{$dangtin->tieude}}</td>
+                            <td data-label="Period">{{$dangtin->hoten}}</td>
+                            <td data-label="Period">{{$dangtin->email}}</td>
+                            <td data-label="Period">{{$dangtin->ngaycapnhat}}</td>
+                            <td class="none" data-label="Due Date">{{$dangtin->gia}}</td>
                             <td class="none"data-label="Amount" style="position: relative;">
-                                <span class="pe"></span>
-                                <span class="be"></span>
+                            <?php
+                              if($dangtin->hienthi==0){
+                                ?>
+                                <a href="{{URL::to('/unactive-product/'.$dangtin->id)}}"><span class="fa-solid fa-up fa-thumbs-up"></span></a>
+                                <?php
+                                }else{
+                                ?>  
+                                <a href="{{URL::to('/active-product/'.$dangtin->id)}}"><span class="fa-solid fa-down fa-thumbs-down"></span></a>
+                                <?php
+                              }
+                              ?>
                             </td>
+                            <style>
+                                .fa-up{
+                                   font-size:2rem;
+                                   padding:20px;
+                                   color:red;
+                                }
+                                .fa-down{
+                                   font-size:2rem;
+                                   padding:20px;
+                                   color:#00FF00;
+                                }
+                            </style>
                             <td class="">
-                                <button class="btn-edit" type="button" data-id="2" data-address="Sample Address" data-name="Men Apparel"  data-contact="65524556">Edit</button>
-                                <button class="btn-delete" type="button" data-id="2">Delete</button>
+                                <a  href="{{URL::to('/edit-dangtin/'.$dangtin->id)}}" class="btn-edit" href="">Sửa</a>
+                                <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-dangtin/'.$dangtin->id)}}"  >
+                                 Xóa
+                                 </a>
                             </td>
                           </tr>
+                          @endforeach 
                         </tbody>
                       </table>
                       <div class="container-pagination">
                             <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                                <a href="#">&raquo;</a>
+                              <span>{{$dangtins->links()}}</span>
                             </div>
                       </div>
+                      <style>
+                        .pagination{
+                            height:30px;
+                            width: 100%;
+                            margin-top:5px;
+                            padding:3px 10px;
+                        }
+                        .inline-flex,.text-gray-700{
+                          display:none;
+                        }
+                      </style>
                   </div>
             </div>
 

@@ -17,25 +17,25 @@
                     <form class="form" action="{{URL::to('/update-lienhe/'.$lienhe->id)}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}} 
                         <div class="inputfield">
-                          <label>Email</label>
-                          <input type="text" rows="5" name="tentieude" value="{{$lienhe->email}}" class="input">
+                          <label>Họ tên</label>
+                          <input type="text" rows="5" name="tentieude" value="{{$lienhe->hoten}}" class="input">
                        </div>   
                        <div class="inputfield">
-                          <label>Ngày cập nhật</label>
-                          <input type="date" name="thoigian" class="input" value="{{$lienhe->thoigian}}">
+                          <label>Email</label>
+                          <input type="text" name="thoigian" class="input" value="{{$lienhe->email}}">
+                       </div> 
+                       <div class="inputfield">
+                          <label>Tiêu đề</label>
+                          <input type="text" name="thoigian" class="input" value="{{$lienhe->tieude}}">
+                       </div> 
+                       <div class="inputfield">
+                          <label>Điện thoai</label>
+                          <input type="number" name="thoigian" class="input" value="0{{$lienhe->dienthoai}}">
                        </div> 
                        <div class="">
                             <label for="fullName">Nội dung</label>
                             <textarea style="resize: none" rows="5"  id="exampleInputPassword1" placeholder="Mô tả danh" name="mota">{{$lienhe->noidung}}</textarea>
                         </div>
-                        <div class="user-input-box">
-                            <div class="form-group">
-                                <label for="exampleInputFile">Hình ảnh</label>
-                                <input name="image" type="file" id="choose">
-                                <img src="{{URL::to('public/upload/'.$lienhe->image)}}" width="80" height="50" >
-                                <p class="help-block"></p>
-                            </div>
-                        </div>    
                           <div class="inputfield">
                             <div>
                                 <button class="btn-postup">Sửa</button>

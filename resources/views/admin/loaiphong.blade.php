@@ -60,40 +60,49 @@
                                         </div>
                                         <div class="card-body">
                                             <table class="table table-bordered ">
-                                            <thead>
-                                            <tr>
-                                                <th style="width:50px" class="text-center">Stt</th>
-                                                <th class="text-center">Mô tả</th>
-                                                <th class="text-center">Chức năng</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                            @foreach($loai as $key => $loai)
-                                            <tr>
-                                                <td style= "color: #707070;"class="text-center">{{$loai->loai_id}}</td>
-                                                <td >
-                                                    <p>Name: <b>{{$loai->tenloai}}</b></p>
-                                                    <p ><small>Mô tả: <b class="p-small">{{$loai->mota}}</b></small></p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a style="margin:10px" href="{{URL::to('/edit-loaiphong/'.$loai->loai_id)}}" class="btn-edit " id="button" >Edit</button>
-                                                    <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaiphong/'.$loai->loai_id)}}"  >
-                                                        Delete
-                                                    </a>
-                                               </tr>
-                                            @endforeach
-                                            
-                                        </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th style="width:50px" class="text-center">Stt</th>
+                                                        <th class="text-center">Mô tả</th>
+                                                        <th class="text-center">Chức năng</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    @foreach($loai as $key => $loais)
+                                                    <tr>
+                                                        <td style= "color: #707070;"class="text-center">{{$loais->loaiphong_id}}</td>
+                                                        <td >
+                                                            <p>Name: <b>{{$loais->tenloai}}</b></p>
+                                                            <p ><small>Mô tả: <b class="p-small">{{$loais->mota}}</b></small></p>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <a style="margin:10px" href="{{URL::to('/edit-loaiphong/'.$loais->loaiphong_id)}}" class="btn-edit " id="button" >Edit</button>
+                                                            <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaiphong/'.$loais->loaiphong_id)}}"  >
+                                                                Delete
+                                                            </a>
+                                                    </tr>
+                                                    @endforeach
+                                                    
+                                                </tbody>
                                             </table>
                                             <div class="container-pagination">
                                                 <div class="pagination">
-                                                    <a href="#">&laquo;</a>
-                                                    <a href="#"></a>
-                                                    <a href="#">2</a>
-                                                    <a href="#">&raquo;</a>
+                                                    <span>{{$loai->links()}}</span>
                                                 </div>
-                                          </div>
+                                           </div>
+                                           <style>
+                                                 .pagination{
+                                                    height:30px;
+                                                    width: 100%;
+                                                    margin-top:-7px;
+                                                    padding:3px 10px;
+                                                 }
+                                                 .inline-flex,.text-gray-700{
+                                                    display:none;
+                                                 }
+                                           </style>
+
                                         </div>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@ class LoaiPhongController extends Controller
     public function showloaiphong()
     {
         $this->AuthLoGin();
-    	$loai = DB::table('tbl_loaiphong')->get();
+    	$loai = DB::table('tbl_loaiphong')->paginate(5);
     	$menageloai = view('admin.loaiphong')->with('loai',$loai);
     	return view('admin_layout')->with('admin.loaiphong',$menageloai);
     }
@@ -41,20 +41,20 @@ class LoaiPhongController extends Controller
         return Redirect::to('list-loaiphong');
 
     }
-    public function editLoaiPhong($loai_id){
+    public function editLoaiPhong($loaiphong_id){
         $this->AuthLoGin();
-        $edit_loaiphong = DB::table('tbl_loaiphong')->where('loai_id',$loai_id)->get();
+        $edit_loaiphong = DB::table('tbl_loaiphong')->where('loaiphong_id',$loaiphong_id)->get();
     	$menage_loaiphong = view('admin.editloaiphong')->with('edit_loaiphong',$edit_loaiphong);
     	return view('admin_layout')->with('admin.editloaiphong',$menage_loaiphong);
     }
 
-     public function updateLoaiPhong(Request $request,$loai_id){
+     public function updateLoaiPhong(Request $request,$loaiphong_id){
         $this->AuthLoGin();
      	$data = array();
         $data['tenloai'] = $request->tenloai;
         $data['mota'] = $request->mota;
 
-    	DB::table('tbl_loaiphong')->where('loai_id',$loai_id)->update($data);
+    	DB::table('tbl_loaiphong')->where('loaiphong_id',$loaiphong_id)->update($data);
     	session::put('update','Cập nhật danh mục thành công!!');
         return Redirect::to('list-loaiphong');
      }
