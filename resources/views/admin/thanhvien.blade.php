@@ -20,7 +20,7 @@
                         <div class="images">
                         @foreach($thanhvien as $key => $thanhvien)
                             <div class="image-box" data-name="spiderman">
-                                <img  src="./public/upload/{{$thanhvien->image}}" alt="">
+                                <img  src="./public/upload/user/{{$thanhvien->image}}" alt="">
                                 <div class="captn">
                                     <h4>{{$thanhvien->tenthanhvien}}</h4>
                                     <p>{{$thanhvien->email}}</p>

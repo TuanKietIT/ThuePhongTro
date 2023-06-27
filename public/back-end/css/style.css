@@ -25,7 +25,7 @@ body{
 }
 
 .wapper{
-    width: 96%;
+    width: 98%;
     height: 93vh;
     background: rgba(255, 255,255, .4);
 }
@@ -156,6 +156,21 @@ body{
 
 
 }
+@media (max-width: 768px){
+    .container .now  {
+        display: block;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .container-main .market-updates {
+        margin: 30px 10px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+}
 
 /* container body*/
 #sidebar{
@@ -165,8 +180,6 @@ body{
     margin-left: 20px;
 	background: rgba(255, 255,255, .6);
     scrollbar-width: none;
-    transform: translateX(-368px);
-    z-index: 1;
 }
 .container-body input{
     -webkit-appearance: none;
@@ -813,7 +826,7 @@ body{
     color: #696969;
     font-size: 1rem;
     font-weight: 400;
-    margin: 5px 0;
+    margin: 1px 0;
 }
 
 .user-input-box input{
@@ -892,6 +905,17 @@ textarea{
    border: none;
 }
 .btn-postup{
+    background-color: #53d769;
+    padding: .6rem 2rem;
+    margin:30px 10px ;
+    right: 250px;
+    top: 200px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+}
+.btn-postupedit{
     position: absolute;
     background-color: #53d769;
     padding: .6rem 2rem;

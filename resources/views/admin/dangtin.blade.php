@@ -23,8 +23,8 @@
                             <th scope="col" width="80px">Hinh ảnh</th>
                             <th class="none" scope="col" width="110px">Tiêu đề</th>
                             <th scope="col" width="90px">HoTen</th>
-                            <th scope="col" width="120px">Email</th>
-                            <th scope="col" width="80px">Ngày cập nhật</th>
+                            <th class="none" scope="col" width="120px">Email</th>
+                            <th class="none" scope="col" width="80px">Ngày cập nhật</th>
                             <th class="none" scope="col" width="40px">Price</th>
                             <th class="none" scope="col" width="90px">Status</th>
                             <th scope="col" width="90px">Action</th>
@@ -35,10 +35,10 @@
                           <tr>
                             <td  data-label="Account">{{$dangtin->id}}</td>
                             <td data-label="Due Date"><img src="./public/upload/dangtin/{{$dangtin->image}}" class="tab-img"></td>
-                            <td class="none"data-label="Amount" > {{$dangtin->tieude}}</td>
+                            <td class="none"data-label="Amount" > {{$dangtin->tenbaiviet}}</td>
                             <td data-label="Period">{{$dangtin->hoten}}</td>
-                            <td data-label="Period">{{$dangtin->email}}</td>
-                            <td data-label="Period">{{$dangtin->ngaycapnhat}}</td>
+                            <td class="none" data-label="Period">{{$dangtin->email}}</td>
+                            <td class="none" data-label="Period">{{$dangtin->ngaycapnhat}}</td>
                             <td class="none" data-label="Due Date">{{$dangtin->gia}}</td>
                             <td class="none"data-label="Amount" style="position: relative;">
                             <?php

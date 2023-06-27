@@ -30,7 +30,7 @@
 		        Địa chỉ:{{$dangtins->diachi}}
 		    </span>
             <h4 class="content-detail">
-		        Mô tả: {{$dangtins->mota}}.
+		        Mô tả:{{$dangtins->tieude}}.
 		    </h4>
             <span class="time">
 				Thời gian đăng: {{$dangtins->ngaycapnhat}}
@@ -63,7 +63,7 @@
 	</div>
 	<div class="details">
 		<div class="search-catagory">
-		    <h2>Lọc Theo loai</h2>
+		    <h2>Lọc theo loai bất động sản</h2>
 		    <hr/>
 			@foreach($loaiphong as $key => $lp)
 			<a href="{{URL::to('/danhmuc-vitri/'.$vt->vitri_id)}}">

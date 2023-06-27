@@ -31,7 +31,7 @@ class ThanhVienController extends Controller
     public function addthanhvien()
     {
         $this->AuthLoGin();
-        $loaithanhvien = DB::table('tbl_loaithanhvien')->orderby('loai_id','desc')->get();
+        $loaithanhvien = DB::table('tbl_loaithanhvien')->get();
         return view('admin.addthanhvien')->with('loaithanhvien',$loaithanhvien);
     }
     public function savethanhvien(Request $request)
@@ -41,7 +41,7 @@ class ThanhVienController extends Controller
         $data['tenthanhvien'] = $request->tenthanhvien;
         $data['dienthoai'] = $request->dienthoai;
         $data['email'] = $request->email;
-        $data['password'] = $request->password;
+        $data['password'] = md5($request->password);
         $data['diachi'] = $request->diachi;
         $data['content'] = $request->content;
         $get_image= $request->file('image');
@@ -65,7 +65,7 @@ class ThanhVienController extends Controller
     }
     public function editthanhvien($id){
         $this->AuthLoGin();
-        $loaithanhvien = DB::table('tbl_loaithanhvien')->orderby('loai_id','desc')->get();
+        $loaithanhvien = DB::table('tbl_loaithanhvien')->orderby('loaithanhvien_id','desc')->get();
         $editthanhvien = DB::table('tbl_thanhvien')->where('id',$id)->get();
         $menagethanhvien = view('admin.editthanhvien')->with('editthanhvien',$editthanhvien)->with('loaithanhvien',$loaithanhvien);
     	return view('admin_layout')->with('admin.editthanhvien',$menagethanhvien);

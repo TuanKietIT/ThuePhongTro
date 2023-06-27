@@ -74,7 +74,6 @@
                                                         <td style= "color: #707070;"class="text-center">{{$loais->loaiphong_id}}</td>
                                                         <td >
                                                             <p>Name: <b>{{$loais->tenloai}}</b></p>
-                                                            <p ><small>Mô tả: <b class="p-small">{{$loais->mota}}</b></small></p>
                                                         </td>
                                                         <td class="text-center">
                                                             <a style="margin:10px" href="{{URL::to('/edit-loaiphong/'.$loais->loaiphong_id)}}" class="btn-edit " id="button" >Edit</button>

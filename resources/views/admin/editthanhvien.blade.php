@@ -11,13 +11,6 @@
                        
                    </form>
                 </div>
-                <?php
-                    $message_thanhvien = Session::get('message_thanhvien');
-                    if ($message_thanhvien) {
-                        echo '<span style="padding-left:230px" class="message-text">'.$message_thanhvien.'</span>';
-                        Session::get('message_thanhvien',null);
-                    }
-                ?>
                 <div class="postup">
                     @foreach($editthanhvien as $key => $thanhvien)
                     <form action="{{URL::to('/update-thanhvien/'.$thanhvien->id)}}" method="post" enctype="multipart/form-data">
@@ -47,10 +40,10 @@
                             <div class="user-input-box">
                                 <select name="loaithanhvien_use" id="">
                                 @foreach($loaithanhvien as $key => $cate)
-                                        @if($cate->loai_id == $thanhvien->id)
-                                          <option selected value="{{$cate->loai_id}}">{{$cate->tenloai}}</option>
+                                        @if($cate->loaithanhvien_id == $thanhvien->id)
+                                          <option selected value="{{$cate->loaithanhvien_id}}">{{$cate->tenloai}}</option>
                                         @else
-                                        <option value="{{$cate->loai_id}}">{{$cate->tenloai}}</option>
+                                        <option value="{{$cate->loaithanhvien_id}}">{{$cate->tenloai}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -63,12 +56,12 @@
                                 <div class="form-group">
                                     <label for="exampleInputFile">Hình ảnh</label>
                                     <input name="image" type="file" id="choose">
-                                    <img src="{{URL::to('public/upload/'.$thanhvien->image)}}" width="100" height="100" >
+                                    <img src="{{URL::to('public/upload/user/'.$thanhvien->image)}}" width="100" height="100" >
                                     <p class="help-block"></p>
                                 </div>
                             </div>
                             <div>
-                                <button class="btn-postup">Thêm thành viên</button>
+                                <button class="btn-postup">Sửa</button>
                                 <a class="btn-cancel" href="{{URL::to('/list-thanhvien')}}" type="button" onclick="$('#manage-supplier').get(0).reset()"> Cancel</a>
                             </div>
                         </div>

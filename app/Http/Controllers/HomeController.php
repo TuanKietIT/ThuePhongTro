@@ -29,11 +29,13 @@ class HomeController extends Controller
     	return view('home.tintuc')->with('tintuc',$tintuc)->with('vitri',$vitri);
     }
     public function lienhe(){
-    	return view('home.lienhe');
+        $loaiphong = DB::table('tbl_loaiphong')->orderby('loaiphong_id','desc')->get();
+        $vitri = DB::table('tbl_vitri')->orderby('vitri_id','desc')->get();
+    	return view('home.lienhe')->with('loaiphong',$loaiphong)->with('vitri',$vitri);
     }
     public function dangtin(){
         $loaiphong = DB::table('tbl_loaiphong')->orderby('loaiphong_id','desc')->get();
-        $vitri = DB::table('tbl_vitri')->orderby('vitri_id','desc')->get();
+        $vitri = DB::table('tbl_vitri')->get();
         $thanhvien = DB::table('tbl_thanhvien')->orderby('id','desc')->get();
     	return view('home.dangtin')->with('loaiphong',$loaiphong)->with('vitri',$vitri)->with('thanhvien',$thanhvien);
     }
@@ -46,13 +48,15 @@ class HomeController extends Controller
     {
         $timkiem = $request->keywords;
         $vitri = DB::table('tbl_vitri')->get();
-    	$search = DB::table('tbl_dangtin')->where('tieude','like','%'.$timkiem.'%')->get();
+    	$search = DB::table('tbl_dangtin')->where('tenbaiviet','like','%'.$timkiem.'%')->get();
     	return view('home.seach')->with('search',$search)->with('vitri',$vitri);
     }
     public function chitiet($id){
+        $dangtin = DB::table('tbl_dangtin')->where('hienthi','0')->paginate(2);
         $vitri = DB::table('tbl_vitri')->get();
+        $loaiphong = DB::table('tbl_loaiphong')->get();
         $chitiet = DB::table('tbl_dangtin')->join('tbl_vitri','tbl_vitri.vitri_id','=','tbl_dangtin.vitri_id')->join('tbl_loaiphong','tbl_loaiphong.loaiphong_id','=','tbl_dangtin.loaiphong_id')->where('id',$id)->get();
-    	return view('home.chitiet')->with('chitiet',$chitiet)->with('vitri',$vitri);
+    	return view('home.chitiet')->with('chitiet',$chitiet)->with('vitri',$vitri)->with('dangtin',$dangtin)->with('loaiphong',$loaiphong);
     }
     public function chitiettintuc($id){
         $chitiettintuc = DB::table('tbl_tintuc')->where('id',$id)->get();

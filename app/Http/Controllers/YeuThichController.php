@@ -25,9 +25,10 @@ class YeuThichController extends Controller
         return Redirect::to('/yeu-thich');
     }
     public function yeuthich(){
+        $loaiphong = DB::table('tbl_loaiphong')->get();
         $vitri = DB::table('tbl_vitri')->get();
         $data = DB::table('tbl_dangtin')->get();
-        return view('home.yeuthich')->with('vitri',$vitri);
+        return view('home.yeuthich')->with('vitri',$vitri)->with('loaiphong',$loaiphong);
      }
      public function deleteyeuthich($rowId){
         Cart::update($rowId,0);

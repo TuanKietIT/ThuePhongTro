@@ -14,7 +14,7 @@
                             </div>
                              <div class=" market-update-left">
                              <h4>Người Xem</h4>
-                            <h3>13,500</h3>
+                            <h3>20  </h3>
                           </div>
                           <div class="clearfix"> </div>
                         </div>
@@ -26,7 +26,7 @@
                             </div>
                             <div class=" market-update-left">
                                 <h4>Tham gia</h4>
-                                <h3>1,250</h3>
+                                <h3>4</h3>
 
                             </div>
                           <div class="clearfix"> </div>
@@ -39,7 +39,7 @@
                             </div>
                             <div class=" market-update-left">
                                 <h4>Đăng tin</h4>
-                                <h3>1,500</h3>
+                                <h3>15</h3>
 
                             </div>
                           <div class="clearfix"> </div>
@@ -52,7 +52,7 @@
                             </div>
                             <div class=" market-update-left">
                                 <h4>Bình Luận</h4>
-                                <h3>1,500</h3>
+                                <h3>2</h3>
 
                             </div>
                           <div class="clearfix"> </div>
@@ -64,14 +64,14 @@
                     <div class="container">
                         <div class="row">
                           <div class="col-sm">
-                                <span>Phan Tuấn Kiệt</span>
-                                <span>Email: tuankietity@gmail.com</span>
-                                <span>MSSV: 1911060152</span>
+                                <span>Nguyễn Thế Anh</span>
+                                <span>Email: nguyenducgiau9999@gmail.com</span>
+                                <span>MSSV: 1911143908</span>
                           </div>    
                           <div class="col-sm">
-                                <span>Phan Tuấn Kiệt</span>
-                                <span>Email: tuankietity@gmail.com</span>
-                                <span>MSSV: 1911060152</span>
+                                <span>Đường Tấn Tài </span>
+                                <span>Email: duongtai0002@gmail.com</span>
+                                <span>MSSV: 1911770350</span>
                           </div>
                           <div class="col-sm">
                                 <span>Phan Tuấn Kiệt</span>

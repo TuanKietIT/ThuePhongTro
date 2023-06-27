@@ -66,10 +66,12 @@
 	</div>
 	<div class="details">
 		<div class="search-catagory">
-		    <h2>Lọc khu vực Bình Thanh</h2>
+		    <h2>Lọc theo loai bất động sản</h2>
 		    <hr/>
-			@foreach($vitri as $key => $vt)
-			 <h3>{{$vt->tenvitri}}</h3>
+			@foreach($loaiphong as $key => $lp)
+			<a href="{{URL::to('/danhmuc-vitri/'.$vt->vitri_id)}}">
+			    <h3>{{$lp->tenloai}}</h3>
+			 </a>
 			 @endforeach
 		</div>
 	</div>

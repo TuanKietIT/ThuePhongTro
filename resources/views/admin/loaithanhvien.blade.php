@@ -67,13 +67,13 @@
                                                     
                                                     @foreach($loai as $key => $loais)
                                                     <tr>
-                                                        <td style= "color: #707070;"class="text-center">{{$loais->loai_id}}</td>
+                                                        <td style= "color: #707070;"class="text-center">{{$loais->loaithanhvien_id}}</td>
                                                         <td >
                                                             <p>chức vụ: <b>{{$loais->tenloai}}</b></p>
                                                         </td>
                                                         <td class="text-center">
-                                                            <a style="margin:10px" href="{{URL::to('/edit-loaithanhvien/'.$loais->loai_id)}}" class="btn-edit " id="button" >Edit</button>
-                                                            <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaithanhvien/'.$loais->loai_id)}}"  >
+                                                            <a style="margin:10px" href="{{URL::to('/edit-loaithanhvien/'.$loais->loaithanhvien_id)}}" class="btn-edit " id="button" >Edit</button>
+                                                            <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaithanhvien/'.$loais->loaithanhvien_id)}}"  >
                                                                 Delete
                                                             </a>
                                                     </tr>

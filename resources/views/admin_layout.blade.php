@@ -78,7 +78,7 @@
                         </a>
                         <ul class="side-down">
                             <li>
-                                <a href="{{URL::to('/timnhatro')}}">
+                                <a href="{{URL::to('/list-loaithanhvien')}}">
                                     <i class="fa fa-solid fa-book"></i>
                                     Danh mục
                                 </a>

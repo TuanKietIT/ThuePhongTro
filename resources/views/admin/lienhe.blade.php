@@ -19,8 +19,8 @@
                             <th scope="col" width="50px">ID</th>
                             <th scope="col" width="80px">Họ tên</th>
                             <th class="none" scope="col" width="100px">email</th>
-                            <th scope="col" width="80px">điện thoại</th>
-                            <th scope="col" width="250px">Nội dung</th>
+                            <th class="none" scope="col" width="80px">điện thoại</th>
+                            <th scope="col" width="150px">Nội dung</th>
                             <th scope="col" width="120px">Action</th>
                           </tr>
                         </thead>

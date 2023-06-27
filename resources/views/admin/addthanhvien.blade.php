@@ -50,8 +50,8 @@
                             
                             <div class="user-input-box">
                                 <select name="loaithanhvien_use" id="">
-                                   @foreach($loaithanhvien as $key => $loai)
-                                    <option value="{{$loai->loai_id}}">{{$loai->tenloai}}</option>
+                                   @foreach($loaithanhvien as $key => $tv)
+                                     <option value="{{$tv->loaithanhvien_id}}">{{$tv->tenloai}}</option>
                                     @endforeach
                                 </select>
                             </div>

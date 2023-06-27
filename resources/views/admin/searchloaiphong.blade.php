@@ -70,14 +70,13 @@
                                         <tbody>
                                             @foreach($search_loai as $key => $search_loai)
                                             <tr>
-                                                <td style= "color: #707070;"class="text-center">{{$search_loai->loai_id}}</td>
+                                                <td style= "color: #707070;"class="text-center">{{$search_loai->loaiphong_id}}</td>
                                                 <td >
                                                     <p>Name: <b>{{$search_loai->tenloai}}</b></p>
-                                                    <p ><small>Mô tả: <b class="p-small">{{$search_loai->mota}}</b></small></p>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a style="margin:10px" href="{{URL::to('/edit-loaiphong/'.$search_loai->loai_id)}}" class="btn-edit " id="button" >Edit</button>
-                                                    <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaiphong/'.$search_loai->loai_id)}}"  >
+                                                    <a style="margin:10px" href="{{URL::to('/edit-loaiphong/'.$search_loai->loaiphong_id)}}" class="btn-edit " id="button" >Edit</button>
+                                                    <a class="btn-delete " onclick="return confirm('Bạn có chắc là muốn xóa danh mục này?')" href="{{URL::to('/delete-loaiphong/'.$search_loai->loaiphong_id)}}"  >
                                                         Delete
                                                     </a>
                                                </tr>

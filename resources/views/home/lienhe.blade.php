@@ -78,42 +78,28 @@
     </div>
 </div>
 <div class="content-right">
+<div class="details">
+		<div class="search-catagory">
+		    <h2>Lọc khu vực Bình Thanh</h2>
+		    <hr/>
+			@foreach($vitri as $key => $vt)
+			 <a href="{{URL::to('/danhmuc-vitri/'.$vt->vitri_id)}}">
+			    <h3>{{$vt->tenvitri}}</h3>
+			 </a>
+			 @endforeach
+		</div>
+	</div>
     <div class="details">
-        <div class="search-price">
-            <h2>Lọc theo khoảng Giá</h2>
-            <hr/>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-        </div>
-    </div>
-    <div class="details">
-        <div class="search-catagory">
-            <h2>Lọc khu vực Bình Thanh</h2>
-            <hr/>
-            <h3>phường</h3>
-            <h3>phường</h3>
-            <h3>phường</h3>
-            <h3>phường</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-            <h3>1 - 3 triệu</h3>
-        </div>
-    </div>
+		<div class="search-catagory">
+		    <h2>Lọc theo loai bất động sản</h2>
+		    <hr/>
+			@foreach($loaiphong as $key => $lp)
+			<a href="{{URL::to('/danhmuc-vitri/'.$vt->vitri_id)}}">
+			    <h3>{{$lp->tenloai}}</h3>
+			 </a>
+			 @endforeach
+		</div>
+	</div>
 </div>
 
 @endsection

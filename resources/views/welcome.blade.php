@@ -83,9 +83,9 @@
 		   	    				</a>
 		   	    			</li>
 		   	    			<li>
-		   	    				<a href="">
+		   	    				<a href="{{URL::to('/yeu-thich')}}">
 		   	    					<i class="fa-solid fa-star"></i>
-		   	    					Thêm yêu thích
+		   	    					Yêu thích
 		   	    				</a>
 		   	    			</li>
 		   	    			<li>
